@@ -1,0 +1,162 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Textbox Page</title>
+</head>
+<body>
+    <h1>Textbox Page</h1>
+    <form>
+        <label for="mytextbox">Enter text:</label>
+        <input type="text" id="mytextbox" name="mytextbox">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notepad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .notepad-container {
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            width: 80%;
+            max-width: 800px;
+            height: 70vh;
+            padding: 20px;
+        }
+
+        .notepad-title-bar {
+            background-color: #007acc;
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            font-weight: bold;
+        }
+
+        .notepad-textarea {
+            width: 100%;
+            height: 70%;
+            border: none;
+            outline: none;
+            resize: none;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        .random-words-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .random-word-box {
+            flex: 1;
+            background-color: lightgreen;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="notepad-container">
+        <div class="notepad-title-bar">Notes</div>
+        <textarea class="notepad-textarea" id="textArea" placeholder="Start typing..."></textarea>
+        
+        <!-- Container for random words -->
+        <div class="random-words-container">
+            <div class="random-word-box" id="randomWord1">Word 1</div>
+            <div class="random-word-box" id="randomWord2">Word 2</div>
+            <div class="random-word-box" id="randomWord3">Word 3</div>
+        </div>
+    </div>
+    <script>
+        // Function to generate random words
+        function generateRandomWords() {
+            const words = ["Apple", "Banana", "Cherry", "Dolphin", "Elephant", "Frog", "Giraffe", "Hippo", "Iguana", "Jellyfish"];
+            const randomWords = [];
+            while (randomWords.length < 3) {
+                const randomIndex = Math.floor(Math.random() * words.length);
+                const word = words[randomIndex];
+                if (!randomWords.includes(word)) {
+                    randomWords.push(word);
+                }
+            }
+            return randomWords;
+        }
+    
+        // Function to replace the word closest to the cursor
+        function replaceWordAtCursor(text, cursorPosition, replacement) {
+            // Split the text into an array of words
+            const words = text.split(/\s+/);
+            
+            // Find the word closest to the cursor position
+            let wordIndex = 0;
+            let charCount = 0;
+            for (let i = 0; i < words.length; i++) {
+                const word = words[i];
+                if (cursorPosition <= charCount + word.length) {
+                    wordIndex = i;
+                    break;
+                }
+                charCount += word.length + 1; // Add 1 for the space
+            }
+            
+            // Replace the word at the found index with the replacement
+            words[wordIndex] = replacement;
+            
+            // Join the words back together with spaces and return the updated text
+            return words.join(" ");
+        }
+    
+        // Function to update the random word boxes
+        function updateRandomWords() {
+            const randomWords = generateRandomWords();
+            for (let i = 1; i <= 3; i++) {
+                const randomWordBox = document.getElementById(`randomWord${i}`);
+                randomWordBox.textContent = randomWords[i - 1];
+                
+                // Add a click event listener to each random word box
+                randomWordBox.addEventListener("click", function() {
+                    const currentWord = textArea.value;
+                    const cursorPosition = textArea.selectionStart;
+                    const updatedText = replaceWordAtCursor(currentWord, cursorPosition, randomWords[i - 1]);
+                    
+                    // Set the updated text in the textarea
+                    textArea.value = updatedText;
+                    
+                    // Update the random words again
+                    updateRandomWords();
+                });
+            }
+        }
+    
+        // Get a reference to the textarea
+        const textArea = document.getElementById("textArea");
+    
+        // Listen for textarea input and update random words
+        textArea.addEventListener("input", updateRandomWords);
+    
+        // Initial update of random words
+        updateRandomWords();
+    </script>
+    </body>
+</html>
