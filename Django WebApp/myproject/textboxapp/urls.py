@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.textbox_page, name='textbox_page'),
+    path('predict', views.predict, name='predict'),
 ]
