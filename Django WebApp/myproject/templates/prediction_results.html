@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Results</title>
+</head>
+<body>
+    <h1>Prediction Results</h1>
+    <form method="post" action="predict">
+      {% csrf_token %}
+      <label for="input_text">Enter your text:</label>
+      <input type="text" name="input_text" id="input_text">
+      <input type="submit" value="Submit">
+  </form>
+
+  
+  {% if input_text %}
+   {% if predictions %}
+    <p>User Input: {{ input_text }}</p>
+    <p>Predictions: {{ predictions }}</p>
+    <!-- Display the predictions as needed -->
+   {% endif %}
+   {% endif %}
+</body>
+</html>
