@@ -23,9 +23,9 @@ The ML output
             -   Training on larger dataset  
 
 - Backend  
-            -  ~~ Model Service  ~~
-            -  ~~ Output from ML piped to Frontend ~~ 
-            -  ~~ Realtime suggestions  ~~
+            -  ~~Model Service~~
+            -  ~~Output from ML piped to Frontend~~ 
+            -  ~~Realtime suggestions~~
             -  Suggested word gets added to input on click 
             
 
