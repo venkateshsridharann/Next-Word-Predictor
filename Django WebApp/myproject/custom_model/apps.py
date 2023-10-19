@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class TextboxappConfig(AppConfig):
+class Custom_modelConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'textboxapp'
+    name = 'custom_model'
