@@ -4,10 +4,8 @@ This is a web application that uses ML to suggest the next word (along with a pr
 The Webapp Sample (WIP) with actual predictions [BaseURL url of app]  
 ![image](https://github.com/venkateshsridharann/Next-Word-Predictor/assets/36308828/833c0a98-c45d-4365-846a-139bb7e381e7)
 
-
 The Webapp Sample (WIP) with dummy predictions  [Add '/sample' to BaseURL of app]  
 ![image](https://github.com/venkateshsridharann/Next-Word-Predictor/assets/36308828/43254d7d-416f-4862-8eac-91571ffcb2d0)
-
 
 The ML output  
 ![ml predictions](https://github.com/venkateshsridharann/Next-Word-Predictor/assets/36308828/6947ba0c-237f-40cd-8d3a-82d4b04324d5)
@@ -17,10 +15,13 @@ The ML output
     
 *** Still Under Development ***
 
-- ML Model  
+- ML Model  - Custom  
+            -   Training on a larger dataset  
+
+  
+- ML Model using Langchain  
             -   Context  
-            -   Grammatically correct suggestions (suggestions after a/an)    
-            -   Training on larger dataset  
+            -   Grammatically correct suggestions (suggestions after a/an)     
 
 - Backend  
             -  ~~Model Service~~  
