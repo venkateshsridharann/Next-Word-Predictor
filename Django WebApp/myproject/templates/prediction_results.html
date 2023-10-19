@@ -12,6 +12,7 @@
             max-width: 800px;
             height: 70vh;
             padding: 20px;
+            
         }
 
         .notepad-title-bar {
@@ -36,7 +37,7 @@
         body {
             display: flex;
             background-color:#dbc8d1;
-            background:linear-gradient(45deg, #e66465, #9198e5);
+            background:linear-gradient(45deg,  #fb2929, #4555ff);
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -59,6 +60,7 @@
             font-size: 16px;
             padding: 10px;
             margin-top: 10px;
+            
         }
         </style>
     <title>My Django App</title>
@@ -68,7 +70,7 @@
     <div id= 'highlight'>
     <div class="notepad-container">
     <div class="notepad-title-bar">Notes</div>
-    <textarea id="textarea"></textarea>
+    <textarea id="textarea" placeholder="Start Typing ..."></textarea>
     <div id="response"></div>
     </div>
     </div>
@@ -87,7 +89,7 @@
 
         function doneTyping () {
             $.ajax({
-                url: '/ajax/',
+                url: 'ajax/',
                 data: {
                   'text': $('#textarea').val()
                 },
