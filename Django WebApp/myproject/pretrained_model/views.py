@@ -14,18 +14,20 @@ from transformers import pipeline, set_seed
 # bert-base-cased and gpt2 using pipeline
 # from transformers import pipeline
 
+generator = pipeline('text-generation', model='gpt2')
+
 # Create a view for the input form for rendering '/predict' 
 def input_form(request):
     return render(request, 'prediction_results.html')
 
 def clean(inp,input_text):
-    inp = inp.replace("\t","").replace("\n","").replace("\\","").replace("_","").replace(input_text,"").strip()
+    inp = inp.replace("/","").replace("\t","").replace("\n","").replace("\\","").replace("_","").replace(input_text,"").strip()
     return inp
+
 def predict(input_text):
     print(input_text)
-    generator = pipeline('text-generation', model='gpt2')
     l = len(input_text.split(' '))
-    out = generator(input_text, max_length=l+5, num_return_sequences=3)
+    out = generator(input_text, max_length=l+10, num_return_sequences=3)
 
     out = [clean(x['generated_text'],input_text) for x in out]
     out = [[x,x.split()[0]] for x in out]
