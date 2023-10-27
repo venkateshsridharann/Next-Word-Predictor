@@ -10,54 +10,38 @@ from django.http import JsonResponse
 from tensorflow.keras.models import load_model
 from django.views.decorators.csrf import csrf_exempt
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+from transformers import pipeline, set_seed
+# bert-base-cased and gpt2 using pipeline
+# from transformers import pipeline
 
-
-
-# Load the machine learning model and data
-model = keras.models.load_model('mlfiles/next_word_try_2.keras')
-
-with open('mlfiles/tokenizer.pickle', 'rb') as file:
-    tokenizer = pickle.load(file)
-
-# Create a view for rendering the root (dummy)'' 
-def textbox_page(request):
-    return render(request, 'textbox.html')
-
+generator = pipeline('text-generation', model='gpt2')
 
 # Create a view for the input form for rendering '/predict' 
 def input_form(request):
     return render(request, 'prediction_results.html')
 
-# function that takes input tokenizedwords and returns output from ML Model
-def predict(input_text):
-    token_list = tokenizer.texts_to_sequences([input_text])[0]
-    token_list = pad_sequences([token_list], maxlen=model.input_shape[1], padding='pre')
-    predicted = model.predict(token_list, verbose=0)[0]
+def clean(inp,input_text):
+    inp = inp.replace("/","").replace("\t","").replace("\n","").replace("\\","").replace("_","").replace(input_text,"").strip()
+    return inp
 
-    # Sort the predictions in descending order of probability
-    sorted_indices = np.argsort(predicted)[::-1]
-    
-    # Get the top 3 predicted words and their probabilities
-    top_words = []
-    for index in sorted_indices[:3]:
-        word = tokenizer.index_word[index]
-        probability = predicted[index]
-        top_words.append((word, probability))
-    
-    # Get the most probable word
-    most_probable_word = top_words[0][0]
-    
-    predictions = top_words
-    
-    response_data = {
-        'input_text': input_text,
-        'predictions': str(top_words)  # Extract just the words
-    }
-    pred_dict = {}
-    for i  in range(len(predictions)):
-        pred_dict[i] = {'word': predictions[i][0], 'probability':predictions[i][1]}
-    print(pred_dict)
-    return predictions 
+def predict(input_text):
+    print(input_text)
+    l = len(input_text.split(' '))
+    out = generator(input_text, max_length=l+10, num_return_sequences=3)
+
+    out = [clean(x['generated_text'],input_text) for x in out]
+    out = [[x,x.split()[0]] for x in out]
+    print(out)
+    return out
+# function that uses bert-base-cased
+# def predict(input_text):
+#     print(input_text)
+#     unmasker = pipeline('fill-mask', model='bert-base-cased')
+#     out = unmasker(input_text+'[MASK]' )
+#     out = list(set([x['token_str'] for x in out]))
+#     print(out)
+#     return out
+
 
 # AJAX handling funtion returning output from server to frontend as Json
 @csrf_exempt
