@@ -62,8 +62,10 @@ The ML output
 - ML Model using Langchain  
             -   Context  
             -   Grammatically correct suggestions (suggestions after a/an)     
+            -   Improve response speed on LLM model  
+            
 
-- Backend  
+- Backend/Frontend  
             -  ~~Model Service~~  
             -  ~~Output from ML piped to Frontend~~   
             -  ~~Realtime suggestions~~  
