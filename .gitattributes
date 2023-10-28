@@ -1,0 +1,1 @@
+Django[[:space:]]WebApp/myproject/mlfiles/* filter=lfs diff=lfs merge=lfs -text
