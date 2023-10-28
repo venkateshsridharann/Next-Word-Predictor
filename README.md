@@ -59,10 +59,13 @@ The ML output
             -   Training on a larger dataset  
 
   
-- ML Model using Langchain  
-            -   Context  
+- ML Model using GPT2 Pretrained Model  
+            -   ~~Context~~  
             -   Grammatically correct suggestions (suggestions after a/an)     
-            -   Improve response speed on LLM model  
+            -   ~~Improve response speed on LLM model~~  
+            -   ~~clean the generated ouput remove ('\', '()', '!!!', '~' etc.)~~   
+            -   Generate probability score for suggestions
+            -   try an implementation of "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha?text=We"    
             
 
 - Backend/Frontend  
