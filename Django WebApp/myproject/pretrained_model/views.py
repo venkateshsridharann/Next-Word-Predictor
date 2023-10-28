@@ -11,8 +11,6 @@ from django.views.decorators.csrf import csrf_exempt
 from transformers import TFGPT2LMHeadModel, GPT2Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from transformers import pipeline, set_seed
-
-
 # bert-base-cased and gpt2 can also use the 'pipeline'
 # from transformers import pipeline
 # generator = pipeline('text-generation', model='gpt2')
@@ -20,8 +18,8 @@ from transformers import pipeline, set_seed
 # # Load and save the pre-trained GPT-2 model and tokenizer
 # model = TFGPT2LMHeadModel.from_pretrained("gpt2")
 # tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
-# tokenizer.save_pretrained("../mlfiles/gpt2_tokenizer")
-# model.save_pretrained("../mlfiles/gpt2_model")
+# tokenizer.save_pretrained("./mlfiles/gpt2_tokenizer")
+# model.save_pretrained("./mlfiles/gpt2_model")
 
 
 # Load the tokenizer and model 
