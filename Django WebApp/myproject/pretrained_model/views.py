@@ -21,13 +21,14 @@ def input_form(request):
     return render(request, 'prediction_results.html')
 
 def clean(inp,input_text):
-    inp = inp.replace("/","").replace("\t","").replace("\n","").replace("\\","").replace("_","").replace(input_text,"").strip()
+    inp = inp.replace("/","").replace("\t"," ").replace("\n","").replace("\\","").replace("_","").replace(input_text,"").strip()
+    inp = inp.replace("\xa0"," ").replace("】","").replace("【","")
     return inp
 
 def predict(input_text):
     print(input_text)
     l = len(input_text.split(' '))
-    out = generator(input_text, max_length=l+10, num_return_sequences=3)
+    out = generator(input_text, max_length=l+20, num_return_sequences=3)
 
     out = [clean(x['generated_text'],input_text) for x in out]
     out = [[x,x.split()[0]] for x in out]

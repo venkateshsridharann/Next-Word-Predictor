@@ -14,9 +14,9 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 
 # Load the machine learning model and data
-model = keras.models.load_model('mlfiles/next_word_try_2.keras')
+model = keras.models.load_model('mlfiles/custom_next_word_try_2.keras')
 
-with open('mlfiles/tokenizer.pickle', 'rb') as file:
+with open('mlfiles/custom_tokenizer.pickle', 'rb') as file:
     tokenizer = pickle.load(file)
 
 # Create a view for rendering the root (dummy)'' 

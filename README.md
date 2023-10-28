@@ -63,6 +63,8 @@ The ML output
             -   Context  
             -   Grammatically correct suggestions (suggestions after a/an)     
             -   Improve response speed on LLM model  
+            -   clean the generated ouput remove ('\', '()', '!!!', '~' etc.)   
+            -   try an implementation of "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha?text=We"    
             
 
 - Backend/Frontend  
