@@ -69,11 +69,11 @@ The Custom ML output
   
 - ML Model using GPT2 Pre-trained Model  
             -   ~~Context~~  
-            -   Grammatically correct suggestions (suggestions after a/an)     
+            -   ~~Grammatically correct suggestions~~     
             -   ~~Improve response speed on LLM model~~  
             -   ~~clean the generated ouput remove ('\', '()', '!!!', '~' etc.)~~   
-            -   Generate probability score for suggestions  
-            -   try an implementation of "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha?text=We"    
+            -   ~~Generate probability score for suggestions~~    
+            
             
 
 - Backend/Frontend  
