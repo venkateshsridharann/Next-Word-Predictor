@@ -2,33 +2,33 @@
 
 The first thing to do is make sure we have git and install Git Large File Storage (model files are too large for git repo to track)
 ```sh
-$ git lfs install
+git lfs install
 ```
 Next, we clone the repository:
 ```sh
-$ git clone https://github.com/venkateshsridharann/Next-Word-Predictor
+git clone https://github.com/venkateshsridharann/Next-Word-Predictor
 ```
 Create a virtual environment to install dependencies in and activate it:
 ```sh
 #(in case you do not have pipenv installed)
-$ pip install pipenv
+pip install pipenv
 
 #install all required packages from pipfile
-$ pipenv install
-$ pipenv shell
+pipenv install
+pipenv shell
 ```
  
 
 or if you have already installed the dependencies just activate the shell
 ```sh
 
-$ pipenv shell
+pipenv shell
 ```
 
 Start the Webapp on the local server
 ```sh
-(env)$ cd 'next word predictor\Django WebApp\myproject'
-(env)$ python manage.py runserver
+cd 'next word predictor\Django WebApp\myproject'
+python manage.py runserver
 ```
 And navigate to `http://127.0.0.1:8000/`.    
 
