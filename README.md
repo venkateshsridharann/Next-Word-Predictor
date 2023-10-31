@@ -64,6 +64,8 @@ The Custom ML output
 ## Still Under Development 
 
 - ML Model  - Custom  
+            -   ~~Trained on a smalled dataset for POC~~  
+            -   ~~Probability score~~  
             -   Training on a larger dataset for better suggestions    
 
   
@@ -77,6 +79,7 @@ The Custom ML output
             
 
 - Backend/Frontend  
+            -  ~~Infrastructure setup~~  
             -  ~~Model Service~~  
             -  ~~Output from ML piped to Frontend~~   
             -  ~~Realtime suggestions~~  
