@@ -83,7 +83,7 @@ The Custom ML output
             -  ~~Model Service~~  
             -  ~~Output from ML piped to Frontend~~   
             -  ~~Realtime suggestions~~  
-            -  Suggested word gets added to input on click   
+            -  ~~Suggested word gets added to input on click~~     
             
 
                     
