@@ -19,10 +19,6 @@ model = keras.models.load_model('mlfiles/custom_next_word_try_2.keras')
 with open('mlfiles/custom_tokenizer.pickle', 'rb') as file:
     tokenizer = pickle.load(file)
 
-# Create a view for rendering the root (dummy)'' 
-def textbox_page(request):
-    return render(request, 'textbox.html')
-
 
 # Create a view for the input form for rendering '/predict' 
 def input_form(request):
