@@ -4,7 +4,7 @@ The first thing to do is make sure we have git and install Git Large File Storag
 ```sh
 $ git lfs install
 ```
-Next we clone the repository:
+Next, we clone the repository:
 ```sh
 $ git clone https://github.com/venkateshsridharann/Next-Word-Predictor
 ```
@@ -45,13 +45,14 @@ This is a web application that uses ML to suggest the next word (along with a pr
 
 <br />
 
-### The Webapp with a custom trained model with actual predictions
-![image](https://github.com/venkateshsridharann/Next-Word-Predictor/assets/36308828/dc2a264b-e9a4-46ec-a5f6-f03695158d97)
+### The Web app with a custom-trained model with actual predictions
+![image](https://github.com/venkateshsridharann/Next-Word-Predictor/assets/36308828/1aae75ae-d30f-4aa7-984c-02f83aa8734c)
 
 <br />
 
 ### The Webapp using GPT2-based pre-trained model with actual predictions - Better Contextual Suggestions
-![image](https://github.com/venkateshsridharann/Next-Word-Predictor/assets/36308828/7002e450-9066-468d-8df9-36e3e907bff6)
+![image](https://github.com/venkateshsridharann/Next-Word-Predictor/assets/36308828/03bb3938-11f6-4f5e-ab0a-57b3dca53a44)
+
 
 <br />
 
@@ -64,7 +65,7 @@ The Custom ML output
 ## Still Under Development 
 
 - ML Model  - Custom  
-            -   ~~Trained on a smalled dataset for POC~~  
+            -   ~~Trained on a small dataset for POC~~  
             -   ~~Probability score~~  
             -   Training on a larger dataset for better suggestions    
 
@@ -73,7 +74,7 @@ The Custom ML output
             -   ~~Context~~  
             -   ~~Grammatically correct suggestions~~     
             -   ~~Improve response speed on LLM model~~  
-            -   ~~clean the generated ouput remove ('\', '()', '!!!', '~' etc.)~~   
+            -   ~~clean the generated output remove ('\', '()', '!!!', '~' etc.)~~   
             -   ~~Generate probability score for suggestions~~    
             
             
@@ -83,7 +84,7 @@ The Custom ML output
             -  ~~Model Service~~  
             -  ~~Output from ML piped to Frontend~~   
             -  ~~Realtime suggestions~~  
-            -  Suggested word gets added to input on click   
+            -  ~~Suggested word gets added to input on click~~     
             
 
                     

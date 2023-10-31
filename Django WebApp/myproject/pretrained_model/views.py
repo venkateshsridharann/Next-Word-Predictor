@@ -75,9 +75,9 @@ def predict_2(sentence):
     # Print the top k candidates and their probabilities
     output = {}
     for candidate, probability in top_k_candidates:
-        output[probability.round(2)] = (f"{clean(candidate)} ({probability:.2f})")
+        output[probability.round(2)] = {'word': candidate, 'probability': str(probability.round(2))}
     output = dict(sorted(output.items(),reverse=True))
-    return (str(list(output.values())))
+    return list(output.values())
 
 
 # AJAX handling funtion returning output from server to frontend as Json
@@ -85,9 +85,9 @@ def predict_2(sentence):
 def ajax_view(request):
     if request.method == 'POST':
         text = request.POST.get('text', '')
-        response_text = predict_2(text) 
-        print(response_text)
-        return JsonResponse({'response_text': str(response_text)})
+        response_list = predict_2(text) 
+        print(response_list)
+        return JsonResponse({'response_text': response_list})
     
 # ==========================================================
 # OLDER PREDICTION FUNCTION (NO PROBABILITY)

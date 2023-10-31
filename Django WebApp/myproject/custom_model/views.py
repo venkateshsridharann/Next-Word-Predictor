@@ -30,6 +30,7 @@ def input_form(request):
 
 # function that takes input tokenizedwords and returns output from ML Model
 def predict(input_text):
+    print(input_text)
     token_list = tokenizer.texts_to_sequences([input_text])[0]
     token_list = pad_sequences([token_list], maxlen=model.input_shape[1], padding='pre')
     predicted = model.predict(token_list, verbose=0)[0]
@@ -38,32 +39,19 @@ def predict(input_text):
     sorted_indices = np.argsort(predicted)[::-1]
     
     # Get the top 3 predicted words and their probabilities
-    top_words = []
+    output = {}
     for index in sorted_indices[:3]:
         word = tokenizer.index_word[index]
         probability = predicted[index]
-        top_words.append((word, probability))
-    
-    # Get the most probable word
-    most_probable_word = top_words[0][0]
-    
-    predictions = top_words
-    
-    response_data = {
-        'input_text': input_text,
-        'predictions': str(top_words)  # Extract just the words
-    }
-    pred_dict = {}
-    for i  in range(len(predictions)):
-        pred_dict[i] = {'word': predictions[i][0], 'probability':predictions[i][1]}
-    print(pred_dict)
-    return predictions 
+        output[probability.round(2)]= {'word': word, 'probability': str(probability.round(2))}
+    output = dict(sorted(output.items(),reverse=True))
+    return list(output.values()) 
 
 # AJAX handling funtion returning output from server to frontend as Json
 @csrf_exempt
 def ajax_view(request):
     if request.method == 'POST':
         text = request.POST.get('text', '')
-        response_text = predict(text) 
-        print(response_text)
-        return JsonResponse({'response_text': str(response_text)})
+        response_list = predict(text) 
+        print(response_list)
+        return JsonResponse({'response_text': response_list})
