@@ -41,7 +41,8 @@ This is a web application that uses ML to suggest the next word (along with a pr
 <br />
 
 ### Model options 
-![image](https://github.com/venkateshsridharann/Next-Word-Predictor/assets/36308828/28d49bdb-4382-4676-9355-bbedd16b0982)
+![image](https://github.com/venkateshsridharann/Next-Word-Predictor/assets/36308828/1ef25ae9-7474-4a56-a8a6-0dfc9fe69b5d)
+
 
 <br />
 
