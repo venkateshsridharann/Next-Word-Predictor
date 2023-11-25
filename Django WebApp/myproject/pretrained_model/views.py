@@ -143,3 +143,6 @@ def ajax_view(request):
 #     runtime = end_time - start_time
 #     print("Runtime predict : {:.2f} seconds".format(runtime))
 # ==========================================================
+
+
+
