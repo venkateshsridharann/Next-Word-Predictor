@@ -41,18 +41,22 @@ This is a web application that uses ML to suggest the next word (along with a pr
 <br />
 
 ### Model options 
-![image](https://github.com/venkateshsridharann/Next-Word-Predictor/assets/36308828/1ef25ae9-7474-4a56-a8a6-0dfc9fe69b5d)
+![Screenshot 2023-11-25 051907](https://github.com/venkateshsridharann/Next-Word-Predictor/assets/36308828/812c56e5-7ef3-492d-928d-a88172a3baec)
+
 
 
 <br />
 
 ### The Web app with a custom-trained model with actual predictions
-![image](https://github.com/venkateshsridharann/Next-Word-Predictor/assets/36308828/1aae75ae-d30f-4aa7-984c-02f83aa8734c)
+![Screenshot 2023-11-25 052223](https://github.com/venkateshsridharann/Next-Word-Predictor/assets/36308828/de9ded15-438e-41bd-96f8-cae67dfa3577)
+
+
 
 <br />
 
 ### The Webapp using GPT2-based pre-trained model with actual predictions - Better Contextual Suggestions
-![image](https://github.com/venkateshsridharann/Next-Word-Predictor/assets/36308828/03bb3938-11f6-4f5e-ab0a-57b3dca53a44)
+![Screenshot 2023-11-25 051957](https://github.com/venkateshsridharann/Next-Word-Predictor/assets/36308828/cc047f4d-26ed-45bd-835f-9210fdac4513)
+
 
 
 <br />
