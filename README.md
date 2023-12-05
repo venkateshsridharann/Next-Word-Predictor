@@ -5,7 +5,7 @@ Clone the repository:
 git clone https://github.com/venkateshsridharann/Next-Word-Predictor
 ```
 
-Get the model files from here "https://1drv.ms/f/s!AsfX3p3XWzqJkQxA-IepUUiuaC14?e=hJckc9".  
+Get the model files from here "https://1drv.ms/f/s!AsfX3p3XWzqJkQnW2vmldU-pjmO8?e=Ys3M1z".  
 Copy the following into "next word predictor\Django WebApp\myproject\mlfiles"  
 ```sh
 1. gpt2_model
