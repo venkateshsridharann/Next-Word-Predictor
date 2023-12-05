@@ -79,7 +79,7 @@ The Custom ML output
 - ML Model  - Custom  
             -   ~~Trained on a small dataset for POC~~  
             -   ~~Probability score~~  
-            -   Training on a larger dataset for better suggestions    
+            -   ~~Training on a larger dataset for better suggestions~~    
 
   
 - ML Model using GPT2 Pre-trained Model  
