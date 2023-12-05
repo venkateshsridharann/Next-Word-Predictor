@@ -1,13 +1,20 @@
 ## Setup
 
-The first thing to do is make sure we have git and install Git Large File Storage (model files are too large for git repo to track)
-```sh
-git lfs install
-```
-Next, we clone the repository:
+Clone the repository:
 ```sh
 git clone https://github.com/venkateshsridharann/Next-Word-Predictor
 ```
+
+Get the model files from here "https://1drv.ms/f/s!AsfX3p3XWzqJkQxA-IepUUiuaC14?e=hJckc9".  
+Copy the following into "next word predictor\Django WebApp\myproject\mlfiles"  
+```sh
+1. gpt2_model
+2. gpt2_tokenizer
+3. custom_model_3.keras
+4. custom_tokenizer_2.pickle
+```  
+
+
 Create a virtual environment to install dependencies in and activate it:
 ```sh
 #(in case you do not have pipenv installed)
